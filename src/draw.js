@@ -32,13 +32,13 @@ class Draw {
       backgroundColor = 'transparent',
     } = style
     ctx.save()
-    // 外环
+    // border
     if (borderWidth > 0) {
-      ctx.fillStyle = borderColor || color
-      this.roundRect(x, y, w, h, borderRadius)
+      ctx.strokeStyle = borderColor || color
+      ctx.strokeRect(x, y, w, h)
     }
 
-    // 内环
+    // content
     ctx.fillStyle = backgroundColor
     const innerWidth = w - 2 * borderWidth
     const innerHeight = h - 2 * borderWidth
