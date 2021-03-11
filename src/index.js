@@ -38,6 +38,7 @@ Component({
               ctx.scale(dpr, dpr)
               this.ctx = ctx
               this.canvas = canvas
+              this.triggerEvent('ready', {canvas, ctx})
             })
         } else {
           this.ctx = wx.createCanvasContext(canvasId, this)
